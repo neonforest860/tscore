@@ -3,9 +3,13 @@ import os
 from PySide6.QtCore import QUrl
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
+from PySide6.QtQuickControls2 import QQuickStyle
 
 
 def main():
+    # Set Material Design as the style
+    QQuickStyle.setStyle("Material")
+
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
 
