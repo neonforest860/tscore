@@ -1,0 +1,4 @@
+PySide6
+qasync
+# If you want to install the wrapper from GitHub:
+# git+https://github.com/zhuzichu520/PySide6-FluentUI-QML.git
