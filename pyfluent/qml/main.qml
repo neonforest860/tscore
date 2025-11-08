@@ -11,8 +11,11 @@ ApplicationWindow {
     visible: true
     title: "Material Design - PySide6 App"
 
+    // Theme state property
+    property bool isDarkMode: false
+
     // Material Design theme settings
-    Material.theme: Material.Light
+    Material.theme: isDarkMode ? Material.Dark : Material.Light
     Material.accent: Material.Purple
 
     // Header with theme switcher
@@ -33,10 +36,10 @@ ApplicationWindow {
             Item { Layout.fillWidth: true }
 
             Button {
-                text: Material.theme === Material.Light ? "Dark Mode" : "Light Mode"
+                text: window.isDarkMode ? "Light Mode" : "Dark Mode"
                 flat: true
                 onClicked: {
-                    Material.theme = Material.theme === Material.Light ? Material.Dark : Material.Light
+                    window.isDarkMode = !window.isDarkMode
                 }
                 Layout.rightMargin: 15
             }
